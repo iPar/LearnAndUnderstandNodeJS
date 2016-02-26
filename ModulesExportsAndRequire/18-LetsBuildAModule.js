@@ -1,6 +1,6 @@
 'use strict';
 
 
-var greet = require('./greet');
+var greet = require('./18-greet');
 
 greet();
