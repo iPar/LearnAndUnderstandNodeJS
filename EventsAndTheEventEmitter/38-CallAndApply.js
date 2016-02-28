@@ -9,7 +9,7 @@ var obj = {
 }
 
 obj.greet();
-obj.greet.call({name: 'Jane Doe'});         //  By using 'call' or 'apply' methods, we are highjacking the functio in the 'obj'
+obj.greet.call({name: 'Jane Doe'});         //  By using 'call' or 'apply' methods, we are highjacking the function in the 'obj'
 obj.greet.apply({name: 'Duffy Doe'});       //    object and are passing in our own object to apply the 'this' keyword to.
 obj.greet({name: 'Steve Doe'});             //  Note that simply passing in an object to the function alone will not have the
                                             //    same effect
