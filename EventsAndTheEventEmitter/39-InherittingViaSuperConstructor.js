@@ -10,7 +10,7 @@
 var util = require('util');
 
 function Person() {
-    this.firstname = 'John'
+    this.firstname = 'John';
     this.lastname = ' Doe';
 }
 
