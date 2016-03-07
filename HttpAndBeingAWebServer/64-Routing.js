@@ -1,7 +1,7 @@
 'use strict';
 
 
-//  In which we demonstrate a simple API with a routing - i.e. sending a different response depending on what url was received.
+//  In which we demonstrate a simple API with routing - i.e. sending a different response depending on what url was received.
 var http = require('http');
 var fs = require('fs');
 
