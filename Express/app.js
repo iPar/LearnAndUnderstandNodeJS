@@ -42,10 +42,16 @@ app.post('/person', urlencodedParser, function(req, res) {
 */
 });
 
-app.post('/personjson', jsonParser, function(req, res) {
-    res.send('Thank you for the JSON data!');
-    console.log(req.body.firstname);
-    console.log(req.body.lastname);
+app.get('/api/person/:id', jsonParser, function(req, res) {
+    //  Get that data from database
+});
+
+app.post('/api/person', jsonParser, function(req, res) {
+    //  Save to the database
+});
+
+app.delete('/api/person/:id', function(req, res) {
+    //  Delete from the database
 });
 
 app.get('/api', function(req, res) {
