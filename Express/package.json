@@ -1,0 +1,14 @@
+{
+  "name": "first-express-app",
+  "version": "1.0.0",
+  "description": "First app using the express framework for NodeJS.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "iPar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
