@@ -5,14 +5,12 @@
  *  middleware function to simply log to the console the Url requested.
  */
 var express = require('express');
-var bodyParser = require('body-parser');
-
 var app = express();
 
-var port = process.env.PORT || 3000;
+var apiController = require('./controllers/apiController');
+var htmlController = require('./controllers/htmlController');
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
-var jsonParser = bodyParser.json();
+var port = process.env.PORT || 3000;
 
 app.use('/assets', express.static(__dirname + '/public'));
 
@@ -23,39 +21,7 @@ app.use('/', function(req, res, next) {
     next();
 });
 
-app.get('/', function(req, res) {
-    res.render('index');            //  Using the view engine defined above to render index.ejs from the default 'views' folder.
-});
-
-app.get('/person/:id', function(req, res) {
-    res.render('person', { ID: req.params.id, Qstr: req.query.qstr });  //  Passing in object as variable to 'person.ejs' template.
-});
-
-// POST /login gets urlencoded bodies
-app.post('/person', urlencodedParser, function(req, res) {
-    res.send('Thank you!');
-    console.log(req.body.firstname);
-    console.log(req.body.lastname);
-/*
-  if (!req.body) return res.sendStatus(400)
-  res.send('welcome, ' + req.body.username)
-*/
-});
-
-app.get('/api/person/:id', jsonParser, function(req, res) {
-    //  Get that data from database
-});
-
-app.post('/api/person', jsonParser, function(req, res) {
-    //  Save to the database
-});
-
-app.delete('/api/person/:id', function(req, res) {
-    //  Delete from the database
-});
-
-app.get('/api', function(req, res) {
-    res.json({ firstname: 'John', lastname: 'Doe', occupation: 'Coder' });
-});
+htmlController(app);
+apiController(app);
 
 app.listen(port);
