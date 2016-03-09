@@ -6,6 +6,10 @@
  */
 var express = require('express');
 var app = express();
+var mongoose = require('mongoose');
+var dbKey = require('./dbKey');
+
+mongoose.connect(dbKey);
 
 var apiController = require('./controllers/apiController');
 var htmlController = require('./controllers/htmlController');
